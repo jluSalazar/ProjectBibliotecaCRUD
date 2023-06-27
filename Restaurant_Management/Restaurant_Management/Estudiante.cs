@@ -87,6 +87,7 @@ namespace Restaurant_Management
 
         private void button17_Click(object sender, EventArgs e)
         {
+            /*
             Metodos.Metodos metodosBusqueda = new Metodos.Metodos();
             int id = Convert.ToInt32(tquery.Text);
 
@@ -120,7 +121,7 @@ namespace Restaurant_Management
             else
             {
                 MessageBox.Show("Estudiante no encontrado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            }*/
         }
 
         

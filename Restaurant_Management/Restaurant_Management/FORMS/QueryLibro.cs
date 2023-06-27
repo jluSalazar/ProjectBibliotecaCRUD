@@ -86,31 +86,34 @@ namespace Restaurant_Management
         {
             Metodos.Metodos metodosBusqueda = new Metodos.Metodos();
             int id = Convert.ToInt32(tquerylibro.Text);
-
-            DataRow estudianteEncontrado = metodosBusqueda.Busquedabinaria(id);
+            string sqlsentence = "SELECT * FROM libro ORDER BY codigo_libro";
+            string convert = "codigo_libro";
+            DataRow estudianteEncontrado = metodosBusqueda.Busquedabinaria(id,sqlsentence,convert);
 
             if (estudianteEncontrado != null)
             {
                 DataTable dtEstudiantes = new DataTable();
-                dtEstudiantes.Columns.Add("codigo_estudiante");
-                dtEstudiantes.Columns.Add("nombre_estudiante");
-                dtEstudiantes.Columns.Add("apellido_estudiante");
-                dtEstudiantes.Columns.Add("celular_estudiante");
-                dtEstudiantes.Columns.Add("sector");
-                dtEstudiantes.Columns.Add("facultad");
-                dtEstudiantes.Columns.Add("correo_estudiante");
+                dtEstudiantes.Columns.Add("codigo_libro");
+                dtEstudiantes.Columns.Add("nombre_libro");
+                dtEstudiantes.Columns.Add("fecha_publicacion");
+                dtEstudiantes.Columns.Add("edicion");
+                dtEstudiantes.Columns.Add("nombre_autor");
+                dtEstudiantes.Columns.Add("apellido_autor");
+                dtEstudiantes.Columns.Add("categoria");
+                dtEstudiantes.Columns.Add("stock");
+                dtEstudiantes.Columns.Add("disponibilidad");
                 // Agrega las columnas adicionales según la estructura de tu tabla Estudiante
-
                 dtEstudiantes.Rows.Add(
-                    estudianteEncontrado["codigo_estudiante"],
-                    estudianteEncontrado["nombre_estudiante"],
-                    estudianteEncontrado["apellido_estudiante"],
-                    estudianteEncontrado["celular_estudiante"],
-                    estudianteEncontrado["sector"],
-                    estudianteEncontrado["facultad"],
-                    estudianteEncontrado["correo_estudiante"]
+                    estudianteEncontrado["codigo_libro"],
+                    estudianteEncontrado["nombre_libro"],
+                    estudianteEncontrado["fecha_publicacion"],
+                    estudianteEncontrado["edicion"],
+                    estudianteEncontrado["nombre_autor"],
+                    estudianteEncontrado["apellido_autor"],
+                    estudianteEncontrado["categoria"],
+                    estudianteEncontrado["stock"],
+                    estudianteEncontrado["disponibilidad"]
                 );
-                // Agrega las filas adicionales según la estructura de tu tabla Estudiante
 
                 dataGLibro.DataSource = dtEstudiantes;
             }

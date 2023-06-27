@@ -83,8 +83,10 @@ namespace Restaurant_Management
         {
             Metodos.Metodos metodosBusqueda = new Metodos.Metodos();
             int id = Convert.ToInt32(tquery.Text);
+            string sqlsentence = "SELECT * FROM estudiante ORDER BY codigo_estudiante";
+            string convert = "codigo_estudiante";
 
-            DataRow estudianteEncontrado = metodosBusqueda.Busquedabinaria(id);
+            DataRow estudianteEncontrado = metodosBusqueda.Busquedabinaria(id,sqlsentence,convert);
 
             if (estudianteEncontrado != null)
             {

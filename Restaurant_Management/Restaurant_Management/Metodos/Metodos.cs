@@ -20,11 +20,11 @@ namespace Restaurant_Management.Metodos
             EstudianteList= queries.GetEstudiantes();
 
         }
-        public DataRow Busquedabinaria(int id)
+        public DataRow Busquedabinaria(int id , string sql, string convert)
         {
             datos = new Datos();
-            string sqlsentence = "SELECT * FROM estudiante ORDER BY codigo_estudiante"; 
-            DataTable dtEstudiantes = datos.ObtenerEstudiantesOrdenadosPorID(sqlsentence);
+           
+            DataTable dtEstudiantes = datos.ObtenerEstudiantesOrdenadosPorID(sql);
 
             // Aplicar búsqueda binaria para encontrar el estudiante por ID
             int inicio = 0;
@@ -35,7 +35,7 @@ namespace Restaurant_Management.Metodos
                 int medio = (inicio + fin) / 2;
                 DataRow estudiante = dtEstudiantes.Rows[medio];
 
-                int estudianteID = Convert.ToInt32(estudiante["codigo_estudiante"]);
+                int estudianteID = Convert.ToInt32(estudiante[convert]);
 
                 if (estudianteID == id)
                 {
