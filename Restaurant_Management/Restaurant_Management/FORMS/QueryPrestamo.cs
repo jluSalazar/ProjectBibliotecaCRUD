@@ -16,7 +16,7 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Restaurant_Management
 {
-    public partial class MetodosEstudiante : Form
+    public partial class QueryPrestamo : Form
     {
         private Conexion conexion;
         private ListaE listaestudiante;
@@ -26,7 +26,7 @@ namespace Restaurant_Management
         private string connectionString = "Data Source=./Biblioteca.db";
         private Metodos.Metodos metodos;
        
-        public MetodosEstudiante()
+        public QueryPrestamo()
         {
 
             InitializeComponent();
@@ -46,9 +46,9 @@ namespace Restaurant_Management
 
         private void Listado_ar()
         {
-            /*
             Datos datos = new Datos();
-            dataGEstudiante.DataSource = datos.listado();*/
+            string sqlsentence = "Select *FROM Prestamo";
+            dataGEstudiante.DataSource = datos.listado(sqlsentence);
         }
         private void Estudiante_Load(object sender, EventArgs e)
         {
@@ -58,31 +58,25 @@ namespace Restaurant_Management
         private void button15_Click(object sender, EventArgs e)
         {
            /* Datos datos = new Datos();
-            dataGEstudiante.DataSource = datos.ObtenerEstudiantesOrdenadosPorNombre();*/
-           QueryEstudiante queryEstudiante = new QueryEstudiante();
-            queryEstudiante.Visible = true;
-            queryEstudiante.Show();
+            string sqlsentence = "SELECT * FROM Prestamo ORDER BY nombre_estudiante";
+            dataGEstudiante.DataSource = datos.ObtenerEstudiantesOrdenadosPorNombre(sqlsentence);*/
 
         }
 
         private void button16_Click(object sender, EventArgs e)
         {
-            /*Datos datos = new Datos();
-            dataGEstudiante.DataSource = datos.ObtenerEstudiantesOrdenadosPorId();*/
-            QueryLibro queryLibro = new QueryLibro();
-            queryLibro.Visible = true;
-            queryLibro.Show();
+            Datos datos = new Datos();
+            string sqlsentence = "SELECT * FROM prestamo ORDER BY codigo_prestamo";
+            dataGEstudiante.DataSource = datos.ObtenerEstudiantesOrdenadosPorId(sqlsentence);
         }
 
 
         private void button1_Click(object sender, EventArgs e)
         {
-           /* string nombre = tquery.Text;
+            string nombre =tquery.Text.Trim();
             Datos datos = new Datos();
-            dataGEstudiante.DataSource = datos.BuscarEstudiantePorNombre(nombre);*/
-           QueryPrestamo queryPrestamo = new QueryPrestamo();
-            queryPrestamo.Visible = true;
-            queryPrestamo.Show();
+            string sqlsentence = "SELECT * FROM Prestamo WHERE codigo_prestamo = @codigoPrestamo";
+            dataGEstudiante.DataSource = datos.BuscarPrestamoPorCodigo(nombre,sqlsentence);
         }
 
         private void button17_Click(object sender, EventArgs e)

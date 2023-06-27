@@ -14,7 +14,7 @@ namespace Restaurant_Management.Metodos
     {
         private CRUD crud;
         private Estudiante_get_set Estudiante;
-        public DataTable listado()
+        public DataTable listado(string sqlconection)
         {
 
             SQLiteDataReader resultado;
@@ -24,7 +24,7 @@ namespace Restaurant_Management.Metodos
             try
             {
                 sqlcon = Conexion.getInstancia().CrearConexion();
-                string sql_tarea = "Select *FROM Estudiante";
+                string sql_tarea = sqlconection;
                 SQLiteCommand cmd = new SQLiteCommand(sql_tarea,sqlcon);
                 sqlcon.Open();
                 resultado= cmd.ExecuteReader();
@@ -44,7 +44,7 @@ namespace Restaurant_Management.Metodos
 
         }
 
-        public DataTable ObtenerEstudiantesOrdenadosPorId()
+        public DataTable ObtenerEstudiantesOrdenadosPorId(string sqlconection2)
         {
 
             SQLiteDataReader resultado;
@@ -54,7 +54,7 @@ namespace Restaurant_Management.Metodos
             try
             {
                 sqlcon = Conexion.getInstancia().CrearConexion();
-                string sql_tarea = "SELECT * FROM estudiante ORDER BY codigo_estudiante";
+                string sql_tarea = sqlconection2;
                 SQLiteCommand cmd = new SQLiteCommand(sql_tarea, sqlcon);
                 sqlcon.Open();
                 resultado = cmd.ExecuteReader();
@@ -73,7 +73,7 @@ namespace Restaurant_Management.Metodos
             }
         }
 
-        public DataTable ObtenerEstudiantesOrdenadosPorNombre()
+        public DataTable ObtenerEstudiantesOrdenadosPorNombre(string sqlconection3)
         {
 
             SQLiteDataReader resultado;
@@ -83,7 +83,7 @@ namespace Restaurant_Management.Metodos
             try
             {
                 sqlcon = Conexion.getInstancia().CrearConexion();
-                string sql_tarea = "SELECT * FROM estudiante ORDER BY nombre_estudiante";
+                string sql_tarea = sqlconection3;
                 SQLiteCommand cmd = new SQLiteCommand(sql_tarea, sqlcon);
                 sqlcon.Open();
                 resultado = cmd.ExecuteReader();
@@ -102,7 +102,7 @@ namespace Restaurant_Management.Metodos
             }
         }
 
-        public DataTable BuscarEstudiantePorNombre(string nombre)
+        public DataTable BuscarPrestamoPorCodigo(string codigoPrestamo,string sentenciasql)
         {
             SQLiteDataReader resultado;
             DataTable dt = new DataTable();
@@ -111,7 +111,37 @@ namespace Restaurant_Management.Metodos
             try
             {
                 sqlcon = Conexion.getInstancia().CrearConexion();
-                string sql_tarea = "SELECT * FROM estudiante WHERE nombre_estudiante COLLATE NOCASE = @nombre ORDER BY nombre_estudiante";
+                string sql_tarea = sentenciasql;
+                SQLiteCommand cmd = new SQLiteCommand(sql_tarea, sqlcon);
+                cmd.Parameters.AddWithValue("@codigoPrestamo", codigoPrestamo);
+                sqlcon.Open();
+                resultado = cmd.ExecuteReader();
+                dt.Load(resultado);
+                return dt;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                if (sqlcon.State == ConnectionState.Open)
+                    sqlcon.Close();
+            }
+        }
+
+
+
+        public DataTable BuscarEstudiantePorNombre(string nombre ,string sqlconection )
+        {
+            SQLiteDataReader resultado;
+            DataTable dt = new DataTable();
+            SQLiteConnection sqlcon = new SQLiteConnection();
+
+            try
+            {
+                sqlcon = Conexion.getInstancia().CrearConexion();
+                string sql_tarea = sqlconection;
                 SQLiteCommand cmd = new SQLiteCommand(sql_tarea, sqlcon);
                 cmd.Parameters.AddWithValue("@nombre", nombre);
                 sqlcon.Open();
@@ -130,7 +160,7 @@ namespace Restaurant_Management.Metodos
             }
         }
 
-        public DataTable ObtenerEstudiantesOrdenadosPorID()
+        public DataTable ObtenerEstudiantesOrdenadosPorID(string sqlconection)
         {
             DataTable dtEstudiantes = new DataTable();
 
@@ -139,7 +169,7 @@ namespace Restaurant_Management.Metodos
                 connection.Open();
 
                 // Obtener todos los estudiantes ordenados por ID
-                string query = "SELECT * FROM estudiante ORDER BY codigo_estudiante";
+                string query = sqlconection;
                 using (var command = new SQLiteCommand(query, connection))
                 {
                     using (var adapter = new SQLiteDataAdapter(command))

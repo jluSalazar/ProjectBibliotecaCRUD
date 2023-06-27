@@ -81,7 +81,8 @@ namespace Restaurant_Management
         private void Listado_ar()
         {
             Datos datos = new Datos();
-            dataGridView1.DataSource = datos.listado();
+            string sqlsentence = "Select *FROM Estudiante";
+            dataGridView1.DataSource = datos.listado(sqlsentence);
         }
 
 

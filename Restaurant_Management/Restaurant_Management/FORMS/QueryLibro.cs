@@ -16,7 +16,7 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Restaurant_Management
 {
-    public partial class MetodosEstudiante : Form
+    public partial class QueryLibro : Form
     {
         private Conexion conexion;
         private ListaE listaestudiante;
@@ -26,7 +26,7 @@ namespace Restaurant_Management
         private string connectionString = "Data Source=./Biblioteca.db";
         private Metodos.Metodos metodos;
        
-        public MetodosEstudiante()
+        public QueryLibro()
         {
 
             InitializeComponent();
@@ -46,9 +46,9 @@ namespace Restaurant_Management
 
         private void Listado_ar()
         {
-            /*
             Datos datos = new Datos();
-            dataGEstudiante.DataSource = datos.listado();*/
+            string sqlsentence = "Select *FROM Libro";
+            dataGLibro.DataSource = datos.listado(sqlsentence);
         }
         private void Estudiante_Load(object sender, EventArgs e)
         {
@@ -57,38 +57,35 @@ namespace Restaurant_Management
 
         private void button15_Click(object sender, EventArgs e)
         {
-           /* Datos datos = new Datos();
-            dataGEstudiante.DataSource = datos.ObtenerEstudiantesOrdenadosPorNombre();*/
-           QueryEstudiante queryEstudiante = new QueryEstudiante();
-            queryEstudiante.Visible = true;
-            queryEstudiante.Show();
+            Datos datos = new Datos();
+            string sqlsentence = "SELECT * FROM Libro ORDER BY nombre_libro";
+            dataGLibro.DataSource = datos.ObtenerEstudiantesOrdenadosPorNombre(sqlsentence);
 
         }
 
         private void button16_Click(object sender, EventArgs e)
         {
-            /*Datos datos = new Datos();
-            dataGEstudiante.DataSource = datos.ObtenerEstudiantesOrdenadosPorId();*/
-            QueryLibro queryLibro = new QueryLibro();
-            queryLibro.Visible = true;
-            queryLibro.Show();
+
+            Datos datos = new Datos();
+            string sqlsentence = "SELECT * FROM Libro ORDER BY codigo_libro";
+            dataGLibro.DataSource = datos.ObtenerEstudiantesOrdenadosPorId(sqlsentence);
         }
 
 
         private void button1_Click(object sender, EventArgs e)
         {
-           /* string nombre = tquery.Text;
+            string nombre = tquerylibro.Text;
             Datos datos = new Datos();
-            dataGEstudiante.DataSource = datos.BuscarEstudiantePorNombre(nombre);*/
-           QueryPrestamo queryPrestamo = new QueryPrestamo();
-            queryPrestamo.Visible = true;
-            queryPrestamo.Show();
+            string sqlsentence = "SELECT * FROM Libro WHERE nombre_libro LIKE '%' || @nombre || '%' COLLATE NOCASE ORDER BY nombre_libro";
+            dataGLibro.DataSource = datos.BuscarEstudiantePorNombre(nombre, sqlsentence);
+
+
         }
 
         private void button17_Click(object sender, EventArgs e)
         {
             Metodos.Metodos metodosBusqueda = new Metodos.Metodos();
-            int id = Convert.ToInt32(tquery.Text);
+            int id = Convert.ToInt32(tquerylibro.Text);
 
             DataRow estudianteEncontrado = metodosBusqueda.Busquedabinaria(id);
 
@@ -115,7 +112,7 @@ namespace Restaurant_Management
                 );
                 // Agrega las filas adicionales según la estructura de tu tabla Estudiante
 
-                dataGEstudiante.DataSource = dtEstudiantes;
+                dataGLibro.DataSource = dtEstudiantes;
             }
             else
             {
@@ -149,10 +146,10 @@ namespace Restaurant_Management
                 }
 
                 // Vincula la tabla al DataGridView
-                dataGEstudiante.DataSource = dtEstudiantes;
+                dataGLibro.DataSource = dtEstudiantes;
 
                 // Ajusta el tamaño de las columnas automáticamente
-                dataGEstudiante.AutoResizeColumns();
+                dataGLibro.AutoResizeColumns();
             }
             else
             {
@@ -165,6 +162,12 @@ namespace Restaurant_Management
 
         private void panel9_Paint(object sender, PaintEventArgs e)
         {
+
+        }
+
+        private void QueryLibro_LocationChanged(object sender, EventArgs e)
+        {
+            Listado_ar();
 
         }
     }

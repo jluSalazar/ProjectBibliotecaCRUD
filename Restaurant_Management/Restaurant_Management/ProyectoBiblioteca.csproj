@@ -43,7 +43,9 @@
     <Reference Include="SQLitePCL, Version=3.8.7.2, Culture=neutral, PublicKeyToken=bddade01e9c850c5, processorArchitecture=MSIL">
       <HintPath>..\packages\SQLitePCL.3.8.7.2\lib\net45\SQLitePCL.dll</HintPath>
     </Reference>
-    <Reference Include="System" />
+    <Reference Include="System">
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.8\System.dll</HintPath>
+    </Reference>
     <Reference Include="System.Core" />
     <Reference Include="System.Data.SQLite, Version=1.0.118.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
       <HintPath>..\packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.118.0\lib\net46\System.Data.SQLite.dll</HintPath>
@@ -62,6 +64,24 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FORMS\QueryPrestamo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\QueryPrestamo.Designer.cs">
+      <DependentUpon>QueryPrestamo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\QueryLibro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\QueryLibro.Designer.cs">
+      <DependentUpon>QueryLibro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\QueryEstudiante.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\QueryEstudiante.Designer.cs">
+      <DependentUpon>QueryEstudiante.cs</DependentUpon>
+    </Compile>
     <Compile Include="FORMS\Estudianteinsert.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -107,7 +127,9 @@
     </Compile>
     <Compile Include="Metodos\CRUD.cs" />
     <Compile Include="Metodos\Datos.cs" />
-    <Compile Include="Metodos\Estudiante.cs" />
+    <Compile Include="Metodos\Estudiante.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
     <Compile Include="Metodos\Estudiante_get_set.cs" />
     <Compile Include="Metodos\Libro.cs" />
     <Compile Include="Metodos\ListaE.cs" />
@@ -131,6 +153,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormRestaurants.resx">
       <DependentUpon>FormRestaurants.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\QueryPrestamo.resx">
+      <DependentUpon>QueryPrestamo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\QueryLibro.resx">
+      <DependentUpon>QueryLibro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\QueryEstudiante.resx">
+      <DependentUpon>QueryEstudiante.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FORMS\Estudianteinsert.resx">
       <DependentUpon>Estudianteinsert.cs</DependentUpon>

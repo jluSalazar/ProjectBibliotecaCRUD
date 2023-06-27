@@ -23,7 +23,8 @@ namespace Restaurant_Management.Metodos
         public DataRow Busquedabinaria(int id)
         {
             datos = new Datos();
-            DataTable dtEstudiantes = datos.ObtenerEstudiantesOrdenadosPorID();
+            string sqlsentence = "SELECT * FROM estudiante ORDER BY codigo_estudiante"; 
+            DataTable dtEstudiantes = datos.ObtenerEstudiantesOrdenadosPorID(sqlsentence);
 
             // Aplicar búsqueda binaria para encontrar el estudiante por ID
             int inicio = 0;

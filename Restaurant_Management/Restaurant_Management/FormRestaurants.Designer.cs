@@ -47,7 +47,6 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::Restaurant_Management.Properties.Resources.Chef_amico;
             this.pictureBox1.Location = new System.Drawing.Point(127, 127);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(474, 325);
