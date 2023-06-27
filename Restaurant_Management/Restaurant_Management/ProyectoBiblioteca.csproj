@@ -70,12 +70,6 @@
     <Compile Include="FORMS\Diseño General\textbox.Designer.cs">
       <DependentUpon>textbox.cs</DependentUpon>
     </Compile>
-    <Compile Include="FORMS\Login.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FORMS\Login.Designer.cs">
-      <DependentUpon>Login.cs</DependentUpon>
-    </Compile>
     <Compile Include="FORMS\QueryPrestamo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -200,9 +194,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FORMS\Diseño General\textbox.resx">
       <DependentUpon>textbox.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FORMS\Login.resx">
-      <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FORMS\QueryPrestamo.resx">
       <DependentUpon>QueryPrestamo.cs</DependentUpon>
