@@ -125,7 +125,6 @@
     <Compile Include="FormRestaurants.Designer.cs">
       <DependentUpon>FormRestaurants.cs</DependentUpon>
     </Compile>
-    <Compile Include="Metodos\CRUD.cs" />
     <Compile Include="Metodos\Datos.cs" />
     <Compile Include="Metodos\Estudiante.cs">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -175,7 +174,7 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="Biblioteca.db">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
