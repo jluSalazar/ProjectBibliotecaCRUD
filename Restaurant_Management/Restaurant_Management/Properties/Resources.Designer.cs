@@ -133,6 +133,26 @@ namespace Restaurant_Management.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Estudiante_2 {
+            get {
+                object obj = ResourceManager.GetObject("Estudiante 2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap estudiante1 {
+            get {
+                object obj = ResourceManager.GetObject("estudiante1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap exit__2_ {
             get {
                 object obj = ResourceManager.GetObject("exit (2)", resourceCulture);
@@ -246,6 +266,17 @@ namespace Restaurant_Management.Properties {
         internal static System.Drawing.Bitmap pexels_pixabay_461198 {
             get {
                 object obj = ResourceManager.GetObject("pexels-pixabay-461198", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap retrato_nina_glamour_mostrando_besos_cara_v_sign_llevar_material_tarea_cuadernos_pie_sobre_fondo_azul {
+            get {
+                object obj = ResourceManager.GetObject("retrato-nina-glamour-mostrando-besos-cara-v-sign-llevar-material-tarea-cuadernos-" +
+                        "pie-sobre-fondo-azul", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

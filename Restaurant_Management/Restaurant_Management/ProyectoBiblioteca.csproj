@@ -325,6 +325,15 @@
   <ItemGroup>
     <None Include="Resources\user %282%291.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\estudiante1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Estudiante 2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\retrato-nina-glamour-mostrando-besos-cara-v-sign-llevar-material-tarea-cuadernos-pie-sobre-fondo-azul.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.118.0\build\net46\Stub.System.Data.SQLite.Core.NetFramework.targets" Condition="Exists('..\packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.118.0\build\net46\Stub.System.Data.SQLite.Core.NetFramework.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

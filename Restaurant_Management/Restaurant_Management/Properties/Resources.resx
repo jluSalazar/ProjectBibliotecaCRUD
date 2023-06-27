@@ -145,6 +145,9 @@
   <data name="Chef-amico" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Chef-amico.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Estudiante 2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Estudiante 2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="exit (2)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\exit (2).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -159,6 +162,12 @@
   </data>
   <data name="chef" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\chef.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="estudiante1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\estudiante1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="logo-color" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\logo-color.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="pexels-pixabay-45202" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\pexels-pixabay-45202.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -193,7 +202,7 @@
   <data name="hamburger" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\hamburger.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="logo-color" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\logo-color.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="retrato-nina-glamour-mostrando-besos-cara-v-sign-llevar-material-tarea-cuadernos-pie-sobre-fondo-azul" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\retrato-nina-glamour-mostrando-besos-cara-v-sign-llevar-material-tarea-cuadernos-pie-sobre-fondo-azul.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

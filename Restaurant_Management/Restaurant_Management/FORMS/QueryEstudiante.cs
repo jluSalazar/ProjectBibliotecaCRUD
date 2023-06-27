@@ -161,5 +161,15 @@ namespace Restaurant_Management
         {
 
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGEstudiante_Layout(object sender, LayoutEventArgs e)
+        {
+            Listado_ar();
+        }
     }
 }
